@@ -1,5 +1,7 @@
+from typing import List
 from flask_pymongo import PyMongo
 from main import app
+from todo import Todo
 
 
 app.config["MONGO_URI"] ="mongodb+srv://giganotosaurus:Joshpass01@todo-api.kwzhjvd.mongodb.net/development?retryWrites=true&w=majority"
@@ -12,9 +14,34 @@ mongo.init_app(app)
 
 
 # Get the todos that are already in the mongodb
-def get_todos():
+def get_todos() -> List[Todo]:
+
     elements = mongo.db.todos.find()
-    print(elements)
-    return list(elements)
+    todo_list = []
+
+    for todo in list(elements):
+        new_todo = Todo(
+        title = todo.get('title'),
+        description = todo.get('description'),
+        datetime_created = todo.get('datetime_created'),
+        status = False,
+        id = str(todo.get('_id')))
 
 
+        print(new_todo)
+        todo_list.append(new_todo)
+    # print(elements)
+
+
+    return todo_list
+
+
+def post_todo(new_todo):
+    result = mongo.db.todos.insert_one(new_todo._asdict())
+    return result
+
+
+# def delete_todo(todo_id):
+
+#     result = mongo.db.todos.delete_one(id)
+#     return result
