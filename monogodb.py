@@ -1,15 +1,20 @@
 from flask_pymongo import PyMongo
 from main import app
 
+
 app.config["MONGO_URI"] ="mongodb+srv://giganotosaurus:Joshpass01@todo-api.kwzhjvd.mongodb.net/development?retryWrites=true&w=majority"
 
 mongo = PyMongo(app)
 mongo.init_app(app)
 
-print(mongo)
-print(vars(mongo))
+# print(mongo)
+# print(vars(mongo))
 
+
+# Get the todos that are already in the mongodb
 def get_todos():
     elements = mongo.db.todos.find()
     print(elements)
     return list(elements)
+
+
