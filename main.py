@@ -4,6 +4,7 @@ from flask_cors import CORS
 from flask_pymongo import PyMongo
 from todo import Todo
 import datetime
+import pytz
 
 
 
@@ -28,6 +29,7 @@ def get_all_todos():
 def post_new_todo():
 
     todo_data = request.get_json()
+    timezone = pytz.timezone('Australia/Sydney')
     
     # new_tod'_id'
     #     'title': todo_data.get('title'),
@@ -39,7 +41,7 @@ def post_new_todo():
     new_todo = Todo(
         title = todo_data.get('title'),
         description = todo_data.get('description'),
-        datetime_created = datetime.datetime.now(),
+        datetime_created = datetime.datetime.now(timezone),
         status = False,
         id = None
     )   
