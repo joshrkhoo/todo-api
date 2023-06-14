@@ -1,4 +1,5 @@
 from typing import List
+from bson import ObjectId
 from flask_pymongo import PyMongo
 from main import app
 from todo import Todo
@@ -41,7 +42,10 @@ def post_todo(new_todo):
     return result
 
 
-# def delete_todo(todo_id):
-
-#     result = mongo.db.todos.delete_one(id)
-#     return result
+def delete_todo(todoid):
+    print('hello world')
+    obj_id = ObjectId(todoid)
+    print(obj_id)
+    print(todoid)
+    result = mongo.db.todos.delete_one({'_id': obj_id})
+    return result

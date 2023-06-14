@@ -10,7 +10,7 @@ import datetime
 # creating Flask app by name of file ?
 app = Flask(__name__)
 CORS(app)
-from monogodb import get_todos, post_todo
+from monogodb import get_todos, post_todo, delete_todo
 
 #route the app as /todos (this will be put after the web url: 'http://127.0.0.1:5000/todos')
 @app.route("/todos", methods=['GET'])
@@ -25,7 +25,7 @@ def get_all_todos():
 
 
 @app.route('/todos', methods=['POST'])
-def new_todo():
+def post_new_todo():
 
     todo_data = request.get_json()
     
@@ -58,9 +58,23 @@ def new_todo():
 
 
 
-@app.route("/todos/<todo_id>", methods = ['DELETE'])
-def delete_todo():
-    
+@app.route("/todos/<todoid>", methods = ['DELETE'])
+def delete_a_todo(todoid):
+    print(todoid)
+    res = delete_todo(todoid)
+
+    # Check if the deletion was successful
+    if res.deleted_count > 0:
+        # Return a JSON response indicating success
+        response = {'success': True, 'message': 'Todo deleted successfully'}
+        return jsonify(response), 200
+    else:
+        # Return a JSON response indicating failure
+        response = {'success': False, 'message': 'Todo not found'}
+        return jsonify(response), 404
+
+
+
 
     
 
