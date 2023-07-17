@@ -75,7 +75,9 @@ def delete_a_todo(todoid):
         response = {'success': False, 'message': 'Todo not found'}
         return jsonify(response), 404
 
-
+if __name__ == '__main__':
+    app.debug = True
+    app.run()
 
 
     
