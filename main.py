@@ -75,12 +75,14 @@ def delete_a_todo(todoid):
         response = {'success': False, 'message': 'Todo not found'}
         return jsonify(response), 404
 
-if __name__ == '__main__':
-    app.debug = True
-    app.run()
 
-
+@app.route("todos/<todoid>", methods = ['PUT'])
+def update_a_todo():
+    
     
 
 
+#run the app
+if __name__ == "__main__":
+    app.run(debug=True)
 

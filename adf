@@ -1,0 +1,53 @@
+[33mcommit 53978ebc1ff62e42324f2a7b39862e564c8537e4[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Author: joshrkhoo <johndoe@email.com>
+Date:   Mon Jul 17 17:18:30 2023 +1000
+
+    adf
+
+[33mcommit 9588676dc7179b6372b77fad084b8a49ccc06e61[m
+Author: Triceratops <75021575+joshrkhoo@users.noreply.github.com>
+Date:   Thu Jun 15 01:30:33 2023 +1000
+
+    change timezone
+
+[33mcommit f8058362e8cbd8c1e68bd66693d819d893fc9bc2[m
+Author: Triceratops <75021575+joshrkhoo@users.noreply.github.com>
+Date:   Thu Jun 15 01:09:05 2023 +1000
+
+    finished delete method
+
+[33mcommit bd040c224758735784ddd936ab64ff0fc534e25e[m
+Author: Triceratops <75021575+joshrkhoo@users.noreply.github.com>
+Date:   Thu Jun 15 00:46:02 2023 +1000
+
+    added named tuple for todo objects
+
+[33mcommit c0dbf94ee7d027d7c24d97e5b4bfccedf6336917[m
+Author: Triceratops <75021575+joshrkhoo@users.noreply.github.com>
+Date:   Wed Jun 14 21:53:35 2023 +1000
+
+    post to mongodb finished
+
+[33mcommit aaa2dad1e497fbab86660a7ce714385942cbf027[m
+Author: Triceratops <75021575+joshrkhoo@users.noreply.github.com>
+Date:   Wed Jun 14 18:54:59 2023 +1000
+
+    jsonify elements within each todo object
+
+[33mcommit ab26f07fd0dd968606cde4b1f51f1d9b55be6958[m
+Author: Triceratops <75021575+joshrkhoo@users.noreply.github.com>
+Date:   Wed Jun 14 18:42:57 2023 +1000
+
+    stuff
+
+[33mcommit 4c804d0d2d57310972707f21564622b61246a131[m
+Author: Triceratops <75021575+joshrkhoo@users.noreply.github.com>
+Date:   Wed Jun 14 18:39:37 2023 +1000
+
+    got a todo
+
+[33mcommit 3ab5209d784576533ab995c3e3f868cb6ae0eadf[m
+Author: Joshua Khoo <75021575+joshrkhoo@users.noreply.github.com>
+Date:   Wed Jun 14 16:42:20 2023 +1000
+
+    Initial commit
