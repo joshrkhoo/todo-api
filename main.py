@@ -11,7 +11,7 @@ import pytz
 # creating Flask app by name of file ?
 app = Flask(__name__)
 CORS(app)
-from monogodb import get_todos, post_todo, delete_todo
+from monogodb import get_todos, post_todo, delete_todo, update_todo
 
 #route the app as /todos (this will be put after the web url: 'http://127.0.0.1:5000/todos')
 @app.route("/todos", methods=['GET'])
@@ -77,9 +77,16 @@ def delete_a_todo(todoid):
 
 
 @app.route("todos/<todoid>", methods = ['PUT'])
-def update_a_todo():
-    
-    
+def update_a_todo(editId):
+
+    res = update_todo(editId)
+
+    if res.matched_count > 0:
+        return jsonify({'message': f'Todo with ID {editId} has been updated.'}), 200
+    else:
+        return jsonify({'error': 'Todo not found.'}), 404
+
+
 
 
 #run the app
