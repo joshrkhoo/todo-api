@@ -51,11 +51,11 @@ def delete_todo(todoid):
     return result
 
 
-def update_todo(editId):
-    obj_id = ObjectId(editId)
-    todo = mongo.db.todos.find_one({'_id': obj_id})
-    result = mongo.db.todos.update_one(
-        {'_id': obj_id},
-    )
+# def update_todo(editId):
+#     obj_id = ObjectId(editId)
+#     todo = mongo.db.todos.find_one({'_id': obj_id})
+#     result = mongo.db.todos.update_one(
+#         {'_id': obj_id},
+#     )
 
-    return result
+#     return result
